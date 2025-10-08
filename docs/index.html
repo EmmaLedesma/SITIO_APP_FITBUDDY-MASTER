@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=../main/index.html">
+    <title>FitBuddy - Redireccionando</title>
+    <style>
+        body {
+            background: #000;
+            color: #45ffca;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        a {
+            color: #45ffca;
+            text-decoration: none;
+            border: 2px solid #45ffca;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            background: #45ffca;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏋️‍♂️ FitBuddy</h1>
+        <p>Redireccionando a la aplicación...</p>
+        <a href="main/index.html">Haz clic aquí si no redirige automáticamente</a>
+    </div>
+    
+    <script>
+        // Redirección automática después de 3 segundos
+        setTimeout(function() {
+            window.location.href = "main/index.html";
+        }, 3000);
+    </script>
+</body>
+</html>
