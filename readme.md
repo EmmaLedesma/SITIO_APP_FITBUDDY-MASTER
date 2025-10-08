@@ -294,11 +294,6 @@ Este proyecto está bajo la **Licencia MIT**. Ver el archivo `LICENSE` para más
 
 ---
 
-**🔄 Historial de Versiones**
-* **v1.0.0 (Actual)**: Landing page completa, sistema de autenticación funcional, Dashboards multi-rol, diseño responsive y persistencia con `localStorage`.
-
-¿Listo para comenzar? Abre `main/index.html` y descubre FitBuddy 🎉
-
 ## 👥 Equipo de Desarrollo
 
 | Nombre | Rol Principal | Responsabilidades |
