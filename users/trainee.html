@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy | Panel Trainee</title>
+    
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../main/estilo.css">
+    <link rel="stylesheet" href="users.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../main/index.html" class="logo"><span>FitBuddy</span></a>
+        <nav class="navbar">
+            <a href="#dashboard" class="active">Inicio</a>
+            <a href="#entrenadores">Entrenadores</a>
+            <a href="#rutinas">Mis Rutinas</a>
+            <a href="#rutas">Rutas</a>
+            <a href="#chat">Chat</a>
+        </nav>
+    </header>
+
+    <section class="users-section" id="dashboard">
+        <div class="user-container">
+            <div class="user-header" data-aos="fade-down">
+                <h1>Panel de Trainee</h1>
+                <p>Gestiona tu entrenamiento y conecta con la comunidad</p>
+            </div>
+
+            <!-- Información del Usuario -->
+            <div class="user-info" data-aos="fade-up">
+                <div class="user-profile">
+                    <div class="user-avatar">TU</div>
+                    <div class="user-details">
+                        <h2>Cargando...</h2>
+                        <span class="user-role">TRAINEE</span>
+                    </div>
+                </div>
+                
+                <div class="user-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Entrenamientos Completados</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Compañeros Conectados</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Rutinas Activas</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Días de Racha</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Entrenadores Disponibles -->
+                <div class="dashboard-card" data-aos="fade-right">
+                    <div class="card-header">
+                        <i class='bx bx-dumbbell'></i>
+                        <h3>Entrenadores Disponibles</h3>
+                    </div>
+                    <div class="user-list" id="trainersList">
+                        <!-- Los entrenadores se cargarán con JavaScript -->
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary" onclick="buscarEntrenadores()">
+                            <i class='bx bx-search'></i> Buscar Más
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mis Rutinas -->
+                <div class="dashboard-card" data-aos="fade-left">
+                    <div class="card-header">
+                        <i class='bx bx-task'></i>
+                        <h3>Mis Rutinas Activas</h3>
+                    </div>
+                    <div class="user-list">
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">CF</div>
+                            <div class="user-item-info">
+                                <h4>Rutina CrossFit</h4>
+                                <p>Completado: 8/12 sesiones</p>
+                            </div>
+                            <span class="user-status status-online">Activa</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">RN</div>
+                            <div class="user-item-info">
+                                <h4>Plan Running 5K</h4>
+                                <p>Completado: 3/8 semanas</p>
+                            </div>
+                            <span class="user-status status-online">En Progreso</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">YG</div>
+                            <div class="user-item-info">
+                                <h4>Yoga Matutino</h4>
+                                <p>Completado: 15/30 días</p>
+                            </div>
+                            <span class="user-status status-online">Activa</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary">
+                            <i class='bx bx-plus'></i> Nueva Rutina
+                        </button>
+                        <button class="btn-secondary">
+                            <i class='bx bx-history'></i> Ver Historial
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Compañeros de Entrenamiento -->
+                <div class="dashboard-card" data-aos="fade-right">
+                    <div class="card-header">
+                        <i class='bx bx-group'></i>
+                        <h3>Compañeros Conectados</h3>
+                    </div>
+                    <div class="user-list" id="buddiesList">
+                        <!-- Los compañeros se cargarán con JavaScript -->
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary" onclick="buscarCompaneros()">
+                            <i class='bx bx-user-plus'></i> Encontrar Compañeros
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Próximas Sesiones -->
+                <div class="dashboard-card" data-aos="fade-left">
+                    <div class="card-header">
+                        <i class='bx bx-calendar'></i>
+                        <h3>Próximas Sesiones</h3>
+                    </div>
+                    <div class="user-list">
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">H</div>
+                            <div class="user-item-info">
+                                <h4>Entrenamiento con Carlos</h4>
+                                <p>Hoy - 18:00 hrs</p>
+                            </div>
+                            <span class="user-status status-online">Confirmado</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">G</div>
+                            <div class="user-item-info">
+                                <h4>Running Grupal</h4>
+                                <p>Mañana - 07:00 hrs</p>
+                            </div>
+                            <span class="user-status status-online">Confirmado</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">Y</div>
+                            <div class="user-item-info">
+                                <h4>Sesión de Yoga</h4>
+                                <p>Viernes - 08:00 hrs</p>
+                            </div>
+                            <span class="user-status status-busy">Por Confirmar</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary">
+                            <i class='bx bx-calendar-plus'></i> Agendar Sesión
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón de Logout -->
+    <a href="#" class="logout-btn">
+        <i class='bx bx-log-out'></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 100,
+            duration: 800,
+        });
+    </script>
+    <script src="users.js"></script>
+    <script src="trainee.js"></script>
+</body>
+</html>

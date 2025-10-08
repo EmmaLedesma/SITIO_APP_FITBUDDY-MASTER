@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy | Panel Trainer</title>
+    
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../main/estilo.css">
+    <link rel="stylesheet" href="users.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../main/index.html" class="logo"><span>FitBuddy</span></a>
+        <nav class="navbar">
+            <a href="#dashboard" class="active">Inicio</a>
+            <a href="#clientes">Mis Clientes</a>
+            <a href="#rutinas">Rutinas</a>
+            <a href="#agenda">Agenda</a>
+            <a href="#estadisticas">Estadísticas</a>
+        </nav>
+    </header>
+
+    <section class="users-section" id="dashboard">
+        <div class="user-container">
+            <div class="user-header" data-aos="fade-down">
+                <h1>Panel de Entrenador</h1>
+                <p>Gestiona tu comunidad y ayuda a otros a alcanzar sus metas</p>
+            </div>
+
+            <!-- Información del Entrenador -->
+            <div class="user-info" data-aos="fade-up">
+                <div class="user-profile">
+                    <div class="user-avatar">EN</div>
+                    <div class="user-details">
+                        <h2>Cargando...</h2>
+                        <span class="user-role">ENTRENADOR</span>
+                    </div>
+                </div>
+                
+                <div class="user-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">24</span>
+                        <span class="stat-label">Clientes Activos</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">156</span>
+                        <span class="stat-label">Sesiones Impartidas</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">4.8</span>
+                        <span class="stat-label">Rating Promedio</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Rutinas Creadas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Mis Clientes -->
+                <div class="dashboard-card" data-aos="fade-right">
+                    <div class="card-header">
+                        <i class='bx bx-group'></i>
+                        <h3>Mis Clientes</h3>
+                    </div>
+                    <div class="user-list" id="clientsList">
+                        <!-- Los clientes se cargarán con JavaScript -->
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary" onclick="gestionarClientes()">
+                            <i class='bx bx-user-plus'></i> Gestionar Clientes
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Agenda de Hoy -->
+                <div class="dashboard-card" data-aos="fade-left">
+                    <div class="card-header">
+                        <i class='bx bx-calendar'></i>
+                        <h3>Agenda de Hoy</h3>
+                    </div>
+                    <div class="user-list">
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">LM</div>
+                            <div class="user-item-info">
+                                <h4>Laura Méndez</h4>
+                                <p>09:00 - Entrenamiento Personalizado</p>
+                            </div>
+                            <span class="user-status status-online">Confirmada</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">DR</div>
+                            <div class="user-item-info">
+                                <h4>Diego Ramírez</h4>
+                                <p>11:00 - Asesoría Técnica</p>
+                            </div>
+                            <span class="user-status status-online">Confirmada</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">SC</div>
+                            <div class="user-item-info">
+                                <h4>Sofía Chen</h4>
+                                <p>16:00 - Sesión de Iniciación</p>
+                            </div>
+                            <span class="user-status status-busy">Por Llamar</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary">
+                            <i class='bx bx-plus'></i> Nueva Cita
+                        </button>
+                        <button class="btn-secondary">
+                            <i class='bx bx-time'></i> Ver Agenda Completa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Rutinas Creadas -->
+                <div class="dashboard-card" data-aos="fade-right">
+                    <div class="card-header">
+                        <i class='bx bx-task'></i>
+                        <h3>Mis Rutinas</h3>
+                    </div>
+                    <div class="user-list">
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">CF</div>
+                            <div class="user-item-info">
+                                <h4>CrossFit Avanzado</h4>
+                                <p>12 clientes - 4.9★</p>
+                            </div>
+                            <span class="user-status status-online">Activa</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">RN</div>
+                            <div class="user-item-info">
+                                <h4>Preparación 10K</h4>
+                                <p>8 clientes - 4.8★</p>
+                            </div>
+                            <span class="user-status status-online">Activa</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">YG</div>
+                            <div class="user-item-info">
+                                <h4>Yoga Terapéutico</h4>
+                                <p>6 clientes - 5.0★</p>
+                            </div>
+                            <span class="user-status status-online">Activa</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary">
+                            <i class='bx bx-plus'></i> Crear Rutina
+                        </button>
+                        <button class="btn-secondary">
+                            <i class='bx bx-stats'></i> Ver Estadísticas
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ingresos y Métricas -->
+                <div class="dashboard-card" data-aos="fade-left">
+                    <div class="card-header">
+                        <i class='bx bx-trending-up'></i>
+                        <h3>Métricas del Mes</h3>
+                    </div>
+                    <div class="user-list">
+                        <div class="user-item">
+                            <div class="user-item-info">
+                                <h4>Ingresos Totales</h4>
+                                <p>$1,250.00 USD</p>
+                            </div>
+                            <span class="user-status status-online">+15%</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-item-info">
+                                <h4>Nuevos Clientes</h4>
+                                <p>5 este mes</p>
+                            </div>
+                            <span class="user-status status-online">+25%</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-item-info">
+                                <h4>Sesiones Completadas</h4>
+                                <p>42 sesiones</p>
+                            </div>
+                            <span class="user-status status-online">+10%</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary">
+                            <i class='bx bx-dollar'></i> Ver Detalles
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón de Logout -->
+    <a href="#" class="logout-btn">
+        <i class='bx bx-log-out'></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 100,
+            duration: 800,
+        });
+    </script>
+    <script src="users.js"></script>
+    <script src="trainer.js"></script>
+</body>
+</html>

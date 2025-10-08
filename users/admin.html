@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy | Panel Administrador</title>
+    
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../main/estilo.css">
+    <link rel="stylesheet" href="users.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../main/index.html" class="logo"><span>FitBuddy</span></a>
+        <nav class="navbar">
+            <a href="#dashboard" class="active">Dashboard</a>
+            <a href="#usuarios">Usuarios</a>
+            <a href="#entrenadores">Entrenadores</a>
+            <a href="#reportes">Reportes</a>
+            <a href="#configuracion">Configuración</a>
+        </nav>
+    </header>
+
+    <section class="users-section" id="dashboard">
+        <div class="user-container">
+            <div class="user-header" data-aos="fade-down">
+                <h1>Panel de Administración</h1>
+                <p>Gestiona la plataforma FitBuddy y supervisa la comunidad</p>
+            </div>
+
+            <!-- Información del Administrador -->
+            <div class="user-info" data-aos="fade-up">
+                <div class="user-profile">
+                    <div class="user-avatar">AD</div>
+                    <div class="user-details">
+                        <h2>Cargando...</h2>
+                        <span class="user-role">ADMINISTRADOR</span>
+                    </div>
+                </div>
+                
+                <div class="user-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">1,247</span>
+                        <span class="stat-label">Usuarios Totales</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">89</span>
+                        <span class="stat-label">Entrenadores Activos</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">4.7</span>
+                        <span class="stat-label">Rating Promedio</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">98.2%</span>
+                        <span class="stat-label">Uptime Plataforma</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Gestión de Usuarios -->
+                <div class="dashboard-card" data-aos="fade-right">
+                    <div class="card-header">
+                        <i class='bx bx-user'></i>
+                        <h3>Gestión de Usuarios</h3>
+                    </div>
+                    <div class="user-list" id="usersList">
+                        <!-- Los usuarios se cargarán con JavaScript -->
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary" onclick="gestionarUsuarios()">
+                            <i class='bx bx-cog'></i> Gestionar Todos
+                        </button>
+                        <button class="btn-secondary">
+                            <i class='bx bx-search'></i> Buscar Usuario
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Entrenadores Pendientes -->
+                <div class="dashboard-card" data-aos="fade-left">
+                    <div class="card-header">
+                        <i class='bx bx-dumbbell'></i>
+                        <h3>Entrenadores por Verificar</h3>
+                    </div>
+                    <div class="user-list">
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">JP</div>
+                            <div class="user-item-info">
+                                <h4>Juan Pérez</h4>
+                                <p>Especialidad: Natación</p>
+                            </div>
+                            <span class="user-status status-busy">Pendiente</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">MG</div>
+                            <div class="user-item-info">
+                                <h4>Marta Gómez</h4>
+                                <p>Especialidad: Pilates</p>
+                            </div>
+                            <span class="user-status status-busy">Pendiente</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--gradient);">LS</div>
+                            <div class="user-item-info">
+                                <h4>Luis Sánchez</h4>
+                                <p>Especialidad: Artes Marciales</p>
+                            </div>
+                            <span class="user-status status-busy">Pendiente</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary">
+                            <i class='bx bx-check'></i> Verificar
+                        </button>
+                        <button class="btn-danger">
+                            <i class='bx bx-x'></i> Rechazar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reportes Recientes -->
+                <div class="dashboard-card" data-aos="fade-right">
+                    <div class="card-header">
+                        <i class='bx bx-flag'></i>
+                        <h3>Reportes Recientes</h3>
+                    </div>
+                    <div class="user-list">
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--danger-color);">!</div>
+                            <div class="user-item-info">
+                                <h4>Contenido Inapropiado</h4>
+                                <p>Usuario: fit_lover23</p>
+                            </div>
+                            <span class="user-status status-busy">Sin Revisar</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--warning-color);">!</div>
+                            <div class="user-item-info">
+                                <h4>Problema de Pago</h4>
+                                <p>Entrenador: pro_coach</p>
+                            </div>
+                            <span class="user-status status-busy">En Proceso</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar-small" style="background: var(--success-color);">!</div>
+                            <div class="user-item-info">
+                                <h4>Sugerencia de Feature</h4>
+                                <p>Usuario: runner_pro</p>
+                            </div>
+                            <span class="user-status status-online">Revisado</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary">
+                            <i class='bx bx-list-check'></i> Ver Todos
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Métricas de la Plataforma -->
+                <div class="dashboard-card" data-aos="fade-left">
+                    <div class="card-header">
+                        <i class='bx bx-stats'></i>
+                        <h3>Métricas de la Plataforma</h3>
+                    </div>
+                    <div class="user-list">
+                        <div class="user-item">
+                            <div class="user-item-info">
+                                <h4>Usuarios Nuevos (30d)</h4>
+                                <p>+147 usuarios</p>
+                            </div>
+                            <span class="user-status status-online">+12%</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-item-info">
+                                <h4>Sesiones Activas</h4>
+                                <p>892 sesiones hoy</p>
+                            </div>
+                            <span class="user-status status-online">+8%</span>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-item-info">
+                                <h4>Ingresos Mensuales</h4>
+                                <p>$12,458.00 USD</p>
+                            </div>
+                            <span class="user-status status-online">+18%</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary">
+                            <i class='bx bx-download'></i> Exportar Reporte
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Herramientas de Administración -->
+            <div class="dashboard-card" data-aos="fade-up">
+                <div class="card-header">
+                    <i class='bx bx-cog'></i>
+                    <h3>Herramientas de Administración</h3>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-primary">
+                        <i class='bx bx-user-plus'></i> Crear Usuario
+                    </button>
+                    <button class="btn-secondary">
+                        <i class='bx bx-message'></i> Anuncios Globales
+                    </button>
+                    <button class="btn-secondary">
+                        <i class='bx bx-data'></i> Backup de Datos
+                    </button>
+                    <button class="btn-danger">
+                        <i class='bx bx-reset'></i> Mantenimiento
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón de Logout -->
+    <a href="#" class="logout-btn">
+        <i class='bx bx-log-out'></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 100,
+            duration: 800,
+        });
+    </script>
+    <script src="users.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
